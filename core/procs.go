@@ -13,8 +13,8 @@ type Process struct {
 	Pid         int32                   `json:"pid,omitempty"`
 	Name        string                  `json:"name,omitempty"`
 	CmdLine     string                  `json:"cmd_line,omitempty"`
-	CPUPercent  float64                 `json:"cpu_percent,omitempty"`
-	MemPercent  float32                 `json:"mem_percent,omitempty"`
+	CPUPercent  float64                 `json:"cpu_percent"`
+	MemPercent  float32                 `json:"mem_percent"`
 	MemoryInfo  *process.MemoryInfoStat `json:"memory_info,omitempty"`
 	Connections []net.ConnectionStat    `json:"connections,omitempty"`
 }
