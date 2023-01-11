@@ -27,3 +27,4 @@
 # 效果图
 
 ![进程工具演示](screenshot/processtool_ex1.png)
+![进程工具演示](screenshot/processtool_ex2.png)
