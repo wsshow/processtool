@@ -17,13 +17,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: NPM Install and Build
-        run: |
-          cd ./server/ui
-          npm install
-          npm run build
-          cd ../..
-
       - name: Set up Go
         uses: actions/setup-go@v3
         with:
