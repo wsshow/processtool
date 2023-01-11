@@ -229,10 +229,9 @@ export default defineComponent({
                     if (data.length > 0) {
                         tableData.length = 0
                     }
+                    let hasChild = false
                     for (const e of data) {
-                        if (!('connections' in e)) {
-                            continue
-                        }
+                        hasChild = ('connections' in e)
                         tableData.push({
                             pid: e.pid,
                             name: e.name,
@@ -240,7 +239,7 @@ export default defineComponent({
                             cpuPercent: e.cpu_percent.toFixed(2) + '%',
                             memPercent: e.mem_percent.toFixed(2) + '%',
                             memSize: (e.memory_info.vms >> 20).toFixed(2) + 'MB',
-                            children: getChildren(e)
+                            children: hasChild ? getChildren(e) : undefined
                         })
                     }
                     loading.value = false
